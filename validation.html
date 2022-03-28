@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>  
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>validation foam in javascript</title>
+<style type="text/css">
+	
+.container{
+	border:1px solid black;
+	height: 90vh;
+}
+label{
+	margin-left: 2vw;
+	font-size: 2vh;
+}
+
+
+input{
+	width: 32vw;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	margin-left: 2vw;
+
+	
+	
+}
+.address{
+	width: 78vw;
+}
+.city,.state,.zipcode{
+	width: 16vw;
+}
+.state-label,.zipcode-label{
+	margin-left: 8vw;
+}
+.phone-number{
+	width: 62vw;
+}
+.email,.Scholorship,.CNIC{
+	width: 70vw;
+}
+.causion{
+	width: 12vw;
+	margin-left: none;
+}
+span{
+	color: red;
+	font-size: 2vh;
+}
+</style>
+</head>
+
+<body>
+	<script type="text/javascript">
+	
+function validate(){
+
+	var fname=document.getElementById('fname').value;
+	var lname=document.getElementById('lname').value;
+	var address=document.getElementById('address').value;
+	var city=document.getElementById('city').value;
+	var state=document.getElementById('state').value;
+	var zipcode=document.getElementById('zipcode').value;
+	var country=document.getElementById('country').value;
+	var DOB=document.getElementById('DOB').value;
+	var email=document.getElementById('email').value;
+	var phonenumber=document.getElementById('phone').value;
+	var scholership=document.getElementById('scholership').value;
+	var CNIC=document.getElementById('CNIC').value;
+
+	document.getElementById('name-box').innerHTML=''
+	document.getElementById('name-box2').innerHTML=''
+	document.getElementById('address-box').innerHTML=''
+	document.getElementById('city-box').innerHTML=''
+	document.getElementById('stat-box').innerHTML=''
+	document.getElementById('zip-box').innerHTML=''
+	document.getElementById('country-box').innerHTML=''
+	document.getElementById('DOB-box').innerHTML=''
+	document.getElementById('email-box').innerHTML=''
+	document.getElementById('phone-box').innerHTML=''
+	document.getElementById('scholership-box').innerHTML=''
+	document.getElementById('CNIC-box').innerHTML=''
+	
+
+	if(fname==""){
+
+	document.getElementById('name-box').innerHTML=' first name field can not be empty'
+}
+else if(lname==""){
+	document.getElementById('name-box2').innerHTML='last name field can not be empty'
+}
+
+else if(address==""){
+	document.getElementById('address-box').innerHTML='address can not be empty'
+}
+
+
+else if(city==""){
+	document.getElementById('city-box').innerHTML='**city can not be empty'
+
+}
+
+
+
+else if(state==""){
+	document.getElementById('stat-box').innerHTML='**state can not be empty'
+
+}
+
+else if(zipcode==""){
+	document.getElementById('zip-box').innerHTML='**zipcode can not be empty'
+
+}
+else if(country==""){
+	document.getElementById('country-box').innerHTML='**country field can not be empty'
+
+}
+else if(DOB==""){
+	document.getElementById('DOB-box').innerHTML='**must need to fill this field'
+
+}
+else if(phonenumber==""){
+	document.getElementById('phone-box').innerHTML='**please enter phonenumber with country code'
+
+}
+else if(email==""){
+	document.getElementById('email-box').innerHTML='**must need to fill this field'
+
+}
+else if(scholership==""){
+	document.getElementById('scholership-box').innerHTML='**need scholership id'
+
+}
+else if(CNIC==""){
+	document.getElementById('CNIC-box').innerHTML='**need your "CNIC NUMBER"  '
+
+}
+
+}
+
+</script>
+
+<div class="container">
+	<h2>student information foam</h2>
+	<div>
+
+		<label >first name:</label>
+	<input type="text"  id="fname" name="" value="">
+
+	
+
+		<label >last name:</label>
+	<input type="text" id='lname' name="">
+	<span id="name-box"></span>
+	<span id="name-box2"></span>
+<br>
+</div>
+
+<div><label >Address:</label>
+	<input type="text"  id="address" class="address" name="">
+	<span id="address-box"></span>
+</div>
+<div>
+	<label class="city-label" >city:</label>
+	<input type="text" id="city" class="city" name="">
+	<span id="city-box"></span>
+	<label class="state-label">state:</label>
+	<input type="text" id="state" class="state" name="">
+	<span id="stat-box"></span>
+	<label class="zipcode-label">zipcode:</label>
+	<input type="text" id="zipcode" class="zipcode" name="">
+	<span id="zip-box"></span>
+</div>
+<div>
+
+		<label >country:</label>
+	<input type="text"  id="country" name="">
+	<span id="country-box"></span>
+
+		<label >DOB:</label>
+	<input type="text" id='DOB' name="">
+	<span id="DOB-box"></span>
+
+</div>
+<div><label >phone number(country code):</label>
+	<input type="text"   id="phone"  class="phone-number" name="">
+	<span id="phone-box"></span>
+</div>
+<div><label >Email address:</label>
+	<input type="text" id="email" class="email" name="">
+	<span id="email-box"></span>
+</div>
+<div><label >Scholorship id:</label>
+	<input type="text"  id="scholership" class="Scholorship" name="">
+	<span id="scholership-box"></span>
+</div>
+<div>
+	<label >CNIC/SNIC:</label>
+	<input type="number" id="CNIC" class="CNIC" name="">
+	<span id="CNIC-box"></span>
+</div>
+<div>
+	<label >Ethincity:</label>
+	<input type="radio" id="causion" name="select" class="causion">causion
+	<input type="radio" id="asian" name="select" class="causion">asin
+	<input type="radio" id="Amercian-indian" name="select" class="causion">Amercian indian
+	<input type="radio" id="hispanic" name="select" class="causion">hispanic
+	<span id="radio-box"></span>
+</div>
+<br>
+<button id="btn" onclick="validate()">click</button>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

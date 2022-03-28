@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form Validation in jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+  	<style> 
+  	.error{
+  		color: red;
+  	}
+  	.success{
+  		color: green;
+  	}
+
+  	</style>
+</head>
+<body>
+<form id="form1"> 
+	Enter Name:
+	<input type="text" name="name"/>
+	<br/>
+	Age:
+	<input type="text" name="age"/>
+	<br/>
+	Email
+	<input type="text" name="email"/>
+	<br/>
+	<input type="submit" id="btn" value="Submit"/>
+</form>
+<script> 
+$(function(){
+	$("#form1").validate({
+
+		rules:{
+
+			name:{
+				required:true,
+				minlength:3
+			},
+			age:{
+				required:true,
+				number:true
+			},
+			email:{
+				required:true,
+				email:true
+			},
+		},
+		messages:{
+			name:{
+
+			required:"Name can not be empty.",
+			minlength:"At least 3 characters",
+			
+			},
+			age:{
+
+			required:"Age can not be empty.",
+			number:"Must be a number",
+			
+			},
+			email:{
+
+			required:"Email can not be empty.",
+			email:"there must be a valid email",
+			
+			}
+
+		},
+		errorClass:"error",
+		validClass:"success"
+
+
+
+	});
+
+
+});
+
+</script>
+</body>
+</html>

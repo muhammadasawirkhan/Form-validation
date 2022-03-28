@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jquery Form validate</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+ <style>
+
+ 	#form1{
+ 		margin-top:2vh;
+ 		margin-left: 22vw;
+ 		width: 50vw;
+ 		height: 110vh;
+ 		border:1px solid #000;
+ 		background-color: #41c5cc;
+ 		padding-left: 2vw;
+ 	}
+ 	.fn{
+ 		margin-top: 3vh;
+ 		margin-left: 3.9vw;
+ 		border:none;
+ 		box-shadow: 1px 1px 7px rgba(0,0,0,1);
+ 	}
+ 	.mn{
+ 		margin-top: 3vh;
+ 		margin-left: 2.3vw;
+ 		border:none;
+ 		box-shadow: 1px 1px 7px rgba(0,0,0,1);
+ 	}
+ 	.ln{
+ 		margin-top: 3vh;
+ 		margin-left: 4vw;
+ 		border:none;
+ 		box-shadow: 1px 1px 7px rgba(0,0,0,1);
+ 	}
+ 	.courses{
+ 		margin-top: 3.5vh;
+ 	}
+ 	input{
+ 		margin-top: 3vh;
+ 		margin-left: 0vw;
+ 		
+ 	}
+ 	.ad {
+ 		width: 47vw;
+ 		height: 20vh;
+ 		margin-left: 0.1vw;
+ 		border:none;
+ 		box-shadow: 1px 1px 7px rgba(0,0,0,1);
+ 	}
+ 	.error{
+  		color: red;
+  	}
+  	.success{
+  		color: green;
+  	}
+
+
+ </style>
+</head>
+<body>
+	<form id="form1">
+		Firstname:
+		<input class="fn"type="text" name="firstname"/>
+		<br/>
+		Middlename:
+		<input class="mn"type="text" name="middlename"/>
+		<br/>
+		Lastname:
+		<input class="ln"type="text" name="lastname"/>
+		<br/>
+		Course:
+		<select class="courses"type="text"name="courses">
+			<option value="">select</option>
+			<option value="HTML">HTML</option>
+			<option value="CSS">CSS</option>
+			<option value="Jquery">Jquery</option>
+		</select>
+		<br/>
+		
+		<label for="gender">gender:</label>
+		<br/>
+		<input class="m"type="radio" name="gender">Male
+		<br/>
+		<input class="f"type="radio" name="gender">Female
+		<br/>
+		<input class="o"type="radio" name="gender">Other
+		<br/>
+		Phone:
+		<input class="ph"type="number" name="number">
+		<br/><br/>
+		Address:
+		<br/>
+		<input class="ad"type="text" name="address">
+		<br/>
+		Email:
+		<input class="em"type="text" name="email">
+		<br/>
+		Password:
+		<input class="pas"type="password" name="password">
+		<br/>
+		Confirm Password:
+		<input class="cm"type="password" name="confirmpassword">
+		<br/>
+		<input type="submit" id="btn" value="Submit"/>
+	</form>
+	<script>
+		$(function(){
+	$("#form1").validate({
+
+		rules:{
+
+			firstname:{
+				required:true,
+				minlength:3
+			},
+			middlename:{
+				required:true,
+				minlength:3
+			},
+			lastname:{
+				required:true,
+				minlength:3
+			},
+			courses:{
+				required:true
+			},
+			number:{
+				required:true,
+				minlength:11
+			},
+			address:{
+				required:true,
+			},
+			email:{
+				required:true,
+				email:true
+			},
+			password:{
+				required:true
+
+			},
+			confirmpassword:{
+				required:true
+			}
+
+
+		},
+		messages:{
+			firstname:{
+
+			required:"First name can not be empty.",
+			minlength:"At least 3 characters",
+			
+			},
+			middlename:{
+
+			required:"Middle name can not be empty.",
+			minlength:"At least 3 characters",
+			
+			},
+			lastname:{
+
+			required:"Last name can not be empty.",
+			minlength:"At least 3 characters",
+			
+			},
+			courses:{
+			required:"this field is required"
+			},
+			number:{
+			number:"must be a number",
+			minlength:"At least 11 numbers"
+
+			},
+			address:{
+				required:"Address is must"
+			},
+			password:{
+				required:"Password is mandatory"
+
+			},
+			confirmpassword:{
+				required:"Confirm your password here"
+			}
+
+		},
+		errorClass:"error",
+		validClass:"success"
+
+
+
+	});
+
+
+});
+	
+
+		
+	</script>
+
+</body>
+</html>
